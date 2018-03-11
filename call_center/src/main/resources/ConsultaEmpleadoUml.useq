@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" automaticImage="JPEG" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.negocio.controller.ConsultasEmpleadosController" project="demo" 
+    file="/demo/src/main/java/com/negocio/controller/ConsultasEmpleadosController.java" binary="false" 
+    label="consultasEmpleadosController" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="102" y="0"/>    
+    <execution id="2">      
+      <position height="105" width="199" x="5" y="107"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="21" width="199" x="5" y="228"/>    
+    </execution>  
+  </object>  
+  <object id="6" language="java" name="com.negocio.impl.AsesorDisponibleImpl" project="demo" 
+    file="/demo/src/main/java/com/negocio/impl/AsesorDisponibleImpl.java" binary="false" label="asesorDisponibleImpl" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="321" y="0"/>    
+    <execution id="4">      
+      <position height="63" width="147" x="208" y="128"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="65" width="7" x="278" y="205"/>    
+    </execution>  
+  </object>  
+  <object id="11" language="java" name="com.negocio.repository.EmpleadoDao" project="demo" 
+    file="/demo/src/main/java/com/negocio/repository/EmpleadoDao.java" binary="false" label="empleadoDao" 
+    type="interface" autoSize="true">    
+    <position height="-1" width="-1" x="485" y="0"/>    
+    <execution id="8">      
+      <position height="21" width="105" x="359" y="149"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="107" width="105" x="359" y="184"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="consultarEmpleados():java.util.List&lt;EmpleadoDto&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="7" operation="findAll():java.util.List&lt;Empleado&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="10" operation="consultarEmpleados():java.util.List&lt;EmpleadoDto&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="13" 
+    operation="realizarMaperoDeEntidad(java.util.List&lt;com.negocio.entity.Empleado&gt;):java.util.List&lt;EmpleadoDto&gt;" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>
+</sequence-diagram>

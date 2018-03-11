@@ -1,0 +1,41 @@
+
+Repositorio Git
+https://github.com/haburitic/PruebaAlMundo.git
+
+
+Documentos 
+Modelo de base de datos en formato jpg,
+Modelo entidad relación formato jpg
+
+Importante tener en cuenta que hay varias imágenes 
+1-> llamada DiagramaClases.jpg la cual muestra el modelo de clases que está actualmente implementado.
+2-> ConsultaEmpleadoUml.jpg, modelo uml de clases, la cual fue implementado en el servicio rest 
+“/ConsultarEmpleados”
+3-> ConsultaLlamadas.jpg, modelo uml de clases, la cual fue implementado en el servicio rest 
+“/ConsultarLlamadas”
+4-> REcepcionLlamadasBD.jpg, modelo uml de clases, la cual fue implementado en el servicio rest 
+“/procesarLlamadas”
+5-> REcepcionLlamadasLista.jpg, modelo uml de clases, la cual fue implementado en el servicio rest 
+“/procesarLlamadas”
+
+Extras/Plus
+1.	Cuando no hay llamadas disponibles se retorna una mensaje informando el hecho, y no se procesa nada.
+2.	Cuando no hay empleados para procesar se informa al usuario del hecho y no se procesa.
+3.	Cuando hay más llamadas que empleados, solo se procesa de acuerdo a la capacidad del pool de hilos el cual es 10, configurable desde una bd h2, la cual es temporal.
+4.	Cuando no hay empleados disponibles el pool de hilos me sirve como cola, y espero hasta que un empleado esté disponible.
+5.	Se entregan 2 servicios de consulta:
+a.	Uno de ellos es la consulta de empleados el cual se accede en la ruta 
+http://localhost:8080/ConsultarEmpleados, método GET.
+b.	La siguiente consulta que se puede hacer es el listado de llamadas sin procesar  en la ruta http://localhost:8080/ConsultarLlamadas, método GET.
+6.	Se entregan dos servicios que ejecutan el procesamiento de llamadas del  contact center.
+a.	Uno de ellos es el procesamiento de llamadas con todos los datos en una base de datos temporal h2, en el  cual se encuentran tanto la lista de llamadas como la de empleados, el cual  se accede en la ruta  http://localhost:8080/procesarLlamadas, método GET, y retornara la respuesta de dicho proceso.
+b.	El otro servicio en un servicio post, a el cual se le puede enviar la respuesta de la consulta de llamadas http://localhost:8080/ConsultarLlamadas, y el servicio la procesara, con los empleados guardados en la bd h2 y retornara la respuesta procesada.
+
+7.	La aplicación está diseñada para que no importe la cantidad de llamadas que ingresen, todas serán atendidas.
+8.	Se agregan 33 test unitarios que validan y aseguran el desarrollo.
+9.	El código está completamente documentado.
+10.	Las dependencias están bien documentadas con maven.
+11.	El proyecto está montado en el  framework spring boot y data, por lo que puede ser ejecutado sin ningún problema y en  cualquier máquina que tenga la máquina virtual de java.
+12.	La razón por la cual se resolvieron los puntos adicionales es muy simple, el desarrollo que se realizó desde el inicio fue implementando TDD,  o en otras palabras un desarrollo guiado por pruebas y estas prácticamente te guían en el desarrollo, y los escenarios son casi que obligados, sin decir que fue interesante, entretenido y retador.
+Nota: para iniciar el proyecto Spring boot,  la clase inicial está en la ruta:
+PruebaAlMundo\call_center\src\main\java\com\negocio\CallCenterApplication.java
